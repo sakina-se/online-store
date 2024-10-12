@@ -51,8 +51,9 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    public function cart(): \Illuminate\Database\Eloquent\Relations\HasOne
+    public function cart(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->hasOne(Cart::class);
+        return $this->belongsToMany(Product::class, 'carts', 'user_id', 'product_id')
+            ->withPivot('quantity');
     }
 }

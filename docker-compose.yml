@@ -44,7 +44,7 @@ services:
             - ./:/var/www
         networks:
             - store_network
-        command: bash -c "npm install && npm run build"
+        command: bash -c "npm install && npm run dev"
 
 # Define the custom network
 networks:
