@@ -16,4 +16,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function test_dashboard_returns_a_successful_response(): void
+    {
+        $response = $this->get('/api/users');
+        $response->assertStatus(200);
+    }
+
 }
